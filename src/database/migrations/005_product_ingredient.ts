@@ -20,3 +20,7 @@ export async function up(knex: Knex) {
       .onUpdate('CASCADE')
   })
 }
+
+export async function down(knex: Knex) {
+  return knex.schema.dropTable('product_ingredient')
+}
