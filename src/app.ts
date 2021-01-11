@@ -1,12 +1,16 @@
-import express from "express";
-import routes from "./routes";
+import express from 'express'
 
-const app = express();
+import routes from './routes'
+import dbConnect from './database/connection'
 
-app.use(routes);
+const app = express()
 
-const port = 3003;
+app.use(routes)
+
+const port = 3003
+
+dbConnect();
 
 app.listen(port, () => {
-  return console.log(`Server is listening on ${port}`);
-});
+  return console.log(`Server is listening on ${port}`)
+})
